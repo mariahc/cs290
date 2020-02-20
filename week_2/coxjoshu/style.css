@@ -1,0 +1,42 @@
+td,
+th {
+  border: 1px black solid;
+}
+
+tbody th {
+  font-style: italic;
+  font-weight: normal;
+}
+
+tbody tr:nth-of-type(2n) {
+  background-color: #cdfffc;
+}
+
+tbody tr:nth-of-type(2n+1) {
+  background-color: #cdd0ff;
+}
+
+form {
+  border: 1px black solid;
+  padding: 5px;
+}
+
+form div {
+  padding: 5px;
+  margin-left: 15px;
+}
+
+.outer-content {
+  background-color: #f78cf4;
+  left: 0;
+  margin-top: 20px;
+  padding: 20px 0;
+  width: 75%;
+}
+
+.inner-content {
+  background-color: #8ceaf7;
+  height: 75%;
+  margin: 0 auto;
+  width: 75%;
+}

@@ -1,1 +1,1 @@
-# CS 290 Web Development
+# Web Dev

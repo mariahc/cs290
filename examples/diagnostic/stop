@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo -e "stopping diagnostic.js\n"
+
+./node_modules/forever/bin/forever stop diagnostic.js
