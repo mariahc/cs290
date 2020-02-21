@@ -15,6 +15,14 @@ app.get('/',function(req,res){
   res.render('home');
 });
 
+app.get('/me', function(req, res) {
+  res.render('me', {method: 'get', payload: JSON.stringify(req.query)});
+});
+
+app.post('/me', function(req, res) {
+  res.render('me', {method: 'post', payload: JSON.stringify(req.body)});
+})
+
 app.get('/show-data',function(req,res){
   var context = {};
   context.sentData = req.query.myData;
