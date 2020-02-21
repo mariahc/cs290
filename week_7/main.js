@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 3000);
+app.set('port', process.argv[2]);
 
 
 app.get('/', function(req, res) {
@@ -50,13 +50,13 @@ app.post('/', function(req, res) {
 });
 
 
-app.use(function(req,res){
+app.use(function(req,res) {
   res.status(404);
   res.render('404');
 });
 
 
-app.use(function(err, req, res, next){
+app.use(function(err, req, res, next) {
   console.error(err.stack);
   res.type('plain/text');
   res.status(500);
@@ -64,6 +64,6 @@ app.use(function(err, req, res, next){
 });
 
 
-app.listen(app.get('port'), function(){
-  console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
+app.listen(app.get('port'), function() {
+  console.log('Server started on port' + app.get('port'));
 });
