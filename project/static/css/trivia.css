@@ -1,3 +1,43 @@
 #card {
   background-color: #ddd;
+  margin: 0 auto;
+  padding: 10px;
+  width: 400px;
+}
+
+#buttons button {
+  border: none;
+  display: block;
+  font-size: 16px;
+  height: 80px;
+  margin: 5px auto;
+  width: 220px;
+}
+
+#info span {
+  margin: 10px 5px;
+}
+
+#next {
+  background-color: #efe700;
+  color: #222;
+}
+
+#question {
+  font-size: 22px;
+}
+
+.answer {
+  background-color: #0f6977;
+  color: #eee;
+}
+
+.correct {
+  background-color: #3ae837;
+  color: #222;
+}
+
+.wrong {
+  background-color: #e50606;
+  color: #222;
 }
