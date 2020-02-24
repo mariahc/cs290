@@ -1,43 +1,56 @@
-#card {
+.trivia button {
+  border: none;
+  display: block;
+  font-size: 16px;
+  height: 80px;
+  left: 0px;
+  margin: 5px auto;
+  position: relative;
+  transition: all ease .2s;
+  width: 220px;
+}
+
+.trivia .card {
   background-color: #ddd;
   margin: 0 auto;
   padding: 10px;
   width: 400px;
 }
 
-#buttons button {
-  border: none;
-  display: block;
-  font-size: 16px;
-  height: 80px;
-  margin: 5px auto;
-  width: 220px;
+.trivia .answers button:hover {
+  left: 15px;
 }
 
-#info span {
+.trivia .info span {
   margin: 10px 5px;
 }
 
-#next {
-  background-color: #efe700;
-  color: #222;
-}
-
-#question {
-  font-size: 22px;
-}
-
-.answer {
+.trivia .answer {
   background-color: #0f6977;
   color: #eee;
 }
 
-.correct {
+.trivia .correct {
   background-color: #3ae837;
   color: #222;
 }
 
-.wrong {
+.trivia .wrong {
   background-color: #e50606;
   color: #222;
+}
+
+.trivia #next {
+  background-color: #efe700;
+  color: #222;
+}
+
+.trivia #next:hover {
+  background-color: #eff700;
+}
+
+
+.trivia #question {
+  font-size: 22px;
+  height: 15%;
 }

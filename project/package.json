@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon main 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Joshua N. Cox <joshua.n.cox@gmail.com> (http://jonoco.me/)",

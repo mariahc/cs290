@@ -1,4 +1,3 @@
-
 /*
   Second answer to server
  */
@@ -10,6 +9,7 @@ function onAnswer(e) {
       showAnswer(answer);
   });
 }
+
 
 /*
   Setup new question and answers
@@ -104,10 +104,22 @@ function postRequest(url, payload) {
 }
 
 
-function main() {
+/*
+  Bind buttons' onclick event
+ */
+function bindButtons() {
   const nextBtn = document.getElementById('next');
   nextBtn.onclick = newRound;
 
+  const answerBtns = document.getElementsByClassName('answer');
+  for (let btn of answerBtns) {
+    btn.onclick = onAnswer;
+  }
+}
+
+
+function main() {
+  bindButtons();
   newRound();
 }
 
