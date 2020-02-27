@@ -1,0 +1,35 @@
+.home h1 {
+  color: #fff;
+  font-size: 190px;
+  text-align: center;
+  width: 100%;
+  z-index: -1;
+  text-shadow:
+    1px  1px 0 #000,
+    1px -1px 0 #000,
+   -1px  1px 0 #000,
+   -1px -1px 0 #000;
+}
+
+.home .roamContainer {
+  display: flex;
+  justify-content: center;
+  margin: 100px auto;
+  width: 100%;
+}
+
+.home #roam {
+  align-items: center;
+  background: linear-gradient(0.25turn, #3f87a6, #f69d3c);
+  border-radius: 25px;
+  color: #eee;
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: center;
+  height: 60px;
+  margin: 0 auto;
+  text-decoration: none;
+  width: 240px;
+  z-index: 100;
+}

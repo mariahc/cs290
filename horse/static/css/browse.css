@@ -1,0 +1,35 @@
+.browse {
+  display: flex;
+  justify-content: center;
+}
+
+.browse .profiles {
+  padding: 0;
+}
+
+.browse .profile {
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  margin-bottom: 50px;
+  text-decoration: none;
+  width: 500px;
+}
+
+.browse .image {
+  align-items: center;
+  border-radius: 50px;
+  display: flex;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+}
+
+.browse .bio {
+  margin-left: 30px;
+}
+
+.browse img {
+  height: 100%;
+}

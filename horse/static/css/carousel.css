@@ -1,0 +1,70 @@
+.carousel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+  images
+ */
+.carousel .images {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.carousel .image {
+  position: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all ease 2s;
+}
+
+/*
+  buttons
+ */
+.carousel .buttons {
+  position: relative;
+  left: inherit;
+  top: inherit;
+  height: 100%;
+}
+
+.carousel button {
+  background-color: rgba(0,0,0,0);
+  color: #444;
+  font-size: 40px;
+  height: 100%;
+  transition: all ease .2s;
+  width: 50px;
+  z-index: 1;
+}
+
+.carousel button:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.carousel #next {
+  margin: 10px;
+  position: relative;
+  float: right;
+}
+
+.carousel #next:after {
+  content: ">";
+}
+
+.carousel #prev {
+  margin: 10px;
+  position: relative;
+}
+
+.carousel #prev:after {
+  content: "<";
+}

@@ -1,0 +1,45 @@
+.header {
+  align-items: center;
+  height: 80px;
+  justify-content: space-between;
+  position: relative;
+  display: flex;
+  width: 100%;
+  z-index: 100;
+}
+
+.header .logo {
+
+}
+
+.header .menu {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+  width: 400px;
+}
+
+.header img {
+  width: 100px;
+}
+
+.header a {
+  align-items: center;
+  background: #fff;
+  border-radius: 25px;
+  color: #111;
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  height: 40px;
+  margin: 0 auto;
+  text-decoration: none;
+  transition: all ease  .2s;
+  width: 100px;
+  z-index: 100;
+}
+
+.header a:hover {
+  background: linear-gradient(0.25turn, #3f87a6, #f69d3c);
+  color: #fff;
+}

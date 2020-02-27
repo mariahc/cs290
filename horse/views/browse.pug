@@ -1,0 +1,13 @@
+extends /layouts/layout.pug
+
+block content
+  div.browse
+    ul.profiles
+      each profile in profiles
+        li
+          a(href="/profile/" + profile.user).profile
+            div.image
+              img(src= "images/" + profile.image, alt="profile photo")
+            div.bio
+              p= profile.name
+              p= profile.bio
