@@ -2,4 +2,12 @@ extends /layouts/layout.pug
 
 block content
   div.chat
-    h1 chat
+    div.chat-container
+      div#chatbox
+        each message in messages
+          div(class="message " + message.sender)
+            span= message.text
+
+      form(data-user=user)#form
+        input(type="text", name="message" placeholder="Send a message")
+        button(type="submit")#send Send
