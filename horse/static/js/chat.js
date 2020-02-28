@@ -1,3 +1,7 @@
+/*
+  Send button handler
+  Adds a random chat response
+ */
 function send(e) {
   e.preventDefault();
 
@@ -20,11 +24,16 @@ function send(e) {
 }
 
 
+/*
+  Automatic random chat responses
+ */
 function response() {
   const form = document.getElementById('form');
 
   const messages = [
     'neigh',
+    'huff',
+    'clop clop',
     '*aggressive snorting*',
     '*whinny*'
   ];
@@ -40,10 +49,13 @@ function response() {
 }
 
 
+/*
+  Append given messages to the chat window
+  Attempts to add only new messages
+ */
 function showMessages(messages) {
   const chatbox = document.getElementById('chatbox');
 
-  console.log(messages);
   // append new messages
   for (let i = chatbox.children.length ; i < messages.length ; i++) {
     const message = messages[i];
@@ -56,10 +68,14 @@ function showMessages(messages) {
     chatbox.appendChild(msgElem);
   }
 
+  // scroll chat window to the newest messages
   chatbox.scrollBy({top: chatbox.scrollHeight, behavior: 'smooth'});
 }
 
 
+/*
+  POST HTTP request handler
+ */
 function postRequest(url, payload) {
   return new Promise((resolve, reject) => {
     let req = new XMLHttpRequest();
@@ -77,7 +93,6 @@ function postRequest(url, payload) {
 function main() {
   const form = document.getElementById('form');
   form.addEventListener('submit', send);
-
 }
 
 

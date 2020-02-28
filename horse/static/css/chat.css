@@ -33,6 +33,8 @@
 }
 .chat .sent {
   align-self: flex-end;
+  color: #fff;
+  background-color: #6a43ee;
 }
 
 .chat form {
