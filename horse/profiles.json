@@ -1,6 +1,24 @@
 {
   "profiles": [
     {
+      "name": "Fruitcake",
+      "image": "profile_1.jpg",
+      "age": 9,
+      "weight": 1220,
+      "bio": "I enjoy trotting through the park.",
+      "job": "Carriage Driver",
+      "location": "2 miles away"
+    },
+    {
+      "name": "Ed",
+      "image": "profile_6.jpg",
+      "age": 12,
+      "weight": 1445,
+      "bio": "Looking for a running buddy.",
+      "job": "Race Vehicle",
+      "location": "9 miles away"
+    },
+    {
       "name": "Harold",
       "image": "profile_0.jpg",
       "age": 7,
@@ -9,15 +27,6 @@
       "job": "Oatisa",
       "location": "3 miles away"
 
-    },
-    {
-      "name": "Fruitcake",
-      "image": "profile_1.jpg",
-      "age": 9,
-      "weight": 1220,
-      "bio": "Just looking for a role in the hay.",
-      "job": "Carriage Driver",
-      "location": "2 miles away"
     },
     {
       "name": "Whiskers",
@@ -33,7 +42,7 @@
       "image": "profile_3.jpg",
       "age": 13,
       "weight": 2025,
-      "bio": "Just looking for a role in the hay.",
+      "bio": "Just got out of a messy divorce, not looking for anything serious.",
       "job": "Stableless",
       "location": "30 miles away"
     },
@@ -54,15 +63,6 @@
       "bio": "Just looking for a role in the hay.",
       "job": "Stud",
       "location": "11 miles away"
-    },
-    {
-      "name": "Ed",
-      "image": "profile_6.jpg",
-      "age": 12,
-      "weight": 1445,
-      "bio": "Looking for a running buddy.",
-      "job": "Race Vehicle",
-      "location": "9 miles away"
     }
   ]
 }

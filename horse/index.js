@@ -32,12 +32,6 @@ app.locals.basedir = path.join(__dirname, 'views');
 app.set('port', process.argv[2]);
 app.use(express.static('static'));
 
-// disable cache
-// app.use((req, res, next) => {
-//   res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
-//   next();
-// });
-
 
 /*
   Displays homepage
