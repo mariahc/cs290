@@ -20,7 +20,7 @@ function send(e) {
 
   form.message.value = '';
 
-  setTimeout(response, Math.floor(Math.random()*4000));
+  setTimeout(response, Math.floor(Math.random()*3000));
 }
 
 
