@@ -16,7 +16,7 @@
       "age": 9,
       "weight": 1220,
       "bio": "Just looking for a role in the hay.",
-      "job": "Baker",
+      "job": "Carriage Driver",
       "location": "2 miles away"
     },
     {
@@ -25,7 +25,7 @@
       "age": 11,
       "weight": 1950,
       "bio": "Tired of standing out in a field alone.",
-      "job": "Horse Manager",
+      "job": "Manger Manager",
       "location": "12 miles away"
     },
     {
@@ -61,7 +61,7 @@
       "age": 12,
       "weight": 1445,
       "bio": "Looking for a running buddy.",
-      "job": "Racer",
+      "job": "Race Vehicle",
       "location": "9 miles away"
     }
   ]

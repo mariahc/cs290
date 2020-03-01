@@ -10,10 +10,13 @@
 .browse .card {
   align-items: center;
   background-color: #fff;
-  color: #000;
+  border-radius: 20px;
+  color: #333;
   display: flex;
+  justify-content: left;
   margin-bottom: 50px;
   text-decoration: none;
+  transition: all ease .2s;
   width: 500px;
 }
 
@@ -22,8 +25,25 @@
   border-radius: 50px;
   display: flex;
   overflow: hidden;
+  transition: all ease .2s;
   width: 150px;
   height: 150px;
+}
+
+.browse .card:hover {
+  background: #eee;
+}
+
+.browse .card:hover .image {
+  border-radius: 30px;
+}
+
+.browse .name {
+  font-size: 22px;
+}
+
+.browse .job {
+
 }
 
 .browse .bio {

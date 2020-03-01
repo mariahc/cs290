@@ -23,4 +23,5 @@ a {
   display: flex;
   justify-content: center;
   text-decoration: none;
+  transition: all ease .2s;
 }
