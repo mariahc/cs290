@@ -12,7 +12,7 @@ function send(e) {
 
   postRequest('/send', {
     sender: 'sent',
-    user: form.dataset.user,
+    user: form.user.value,
     text: form.message.value
   }).then(res => {
     showMessages(res.chat);
@@ -41,7 +41,7 @@ function response() {
 
   postRequest('/send', {
     sender: 'got',
-    user: form.dataset.user,
+    user: form.user.value,
     text: randMessage
   }).then(res => {
     showMessages(res.chat);

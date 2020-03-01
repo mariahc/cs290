@@ -3,11 +3,16 @@ extends /layouts/layout.pug
 block content
   div.chat
     div.chat-container
+      div.chat-header
+        div.image
+          img(src='images/'+profile.image, alt="profile picture")
+        span.name #{profile.name}
       div#chatbox
         each message in messages
           div(class="message " + message.sender)
             span= message.text
 
-      form(data-user=user)#form
+      form#form
+        input(type="hidden", name="user", value=profile.name)
         input(type="text", name="message" placeholder="Send a message")
         button(type="submit")#send Send

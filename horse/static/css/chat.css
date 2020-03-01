@@ -11,6 +11,30 @@
   flex-direction: column;
 }
 
+.chat .chat-header {
+  align-items: center;
+  background: #eee;
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.chat .image {
+  border-radius: 50px;
+  height: 50px;
+  margin: 5px;
+  overflow: hidden;
+  width: 50px;
+}
+
+.chat .name {
+  color: #555;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
 .chat #chatbox {
   display: flex;
   flex-direction: column;
@@ -35,6 +59,10 @@
   align-self: flex-end;
   color: #fff;
   background-color: #6a43ee;
+}
+
+.chat img {
+  height: 100%;
 }
 
 .chat form {

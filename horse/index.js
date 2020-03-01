@@ -64,7 +64,7 @@ app.get('/chat', function(req, res) {
         res.render('chat', {
           title: 'chat',
           js: 'chat',
-          user: name,
+          profile,
           messages: req.session.chat[name]
         });
 
@@ -73,7 +73,7 @@ app.get('/chat', function(req, res) {
         res.render('chat', {
           title: 'chat',
           js: 'chat',
-          user: name,
+          profile,
           messages: req.session.chat[name]
         });
       }
