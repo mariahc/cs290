@@ -117,6 +117,14 @@ app.get('/profile', function(req, res) {
 
 
 /*
+  Displays signup page
+ */
+app.get('/signup', function(req, res) {
+  res.render('signup', { title: 'hay love - sign up' });
+});
+
+
+/*
   Returns the profile after the current provided profile
  */
 app.get('/nextprofile', function(req, res) {

@@ -1,0 +1,24 @@
+.signup {
+  align-items: center;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.signup .warning {
+  margin-bottom: 40px;
+}
+
+.signup h1 {
+  font-size: 80px;
+}
+
+.signup a {
+  background-color: #ff146a;
+  border-radius: 30px;
+  color: #fff;
+  height: 60px;
+  width: 200px
+}
