@@ -13,7 +13,7 @@
 
 .chat .chat-header {
   align-items: center;
-  background: #ddd;
+  background: #38e7b6;
   border-bottom: 1px solid #ccc;
   border-radius: 5px 5px 0 0;
   display: flex;
@@ -30,7 +30,7 @@
 }
 
 .chat .name {
-  color: #555;
+  color: #fff;
   font-size: 18px;
   margin-left: 10px;
 }

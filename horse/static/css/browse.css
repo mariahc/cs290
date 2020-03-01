@@ -10,7 +10,7 @@
 .browse .card {
   align-items: center;
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 50px;
   color: #333;
   display: flex;
   justify-content: left;
@@ -31,11 +31,7 @@
 }
 
 .browse .card:hover {
-  background: #eee;
-}
-
-.browse .card:hover .image {
-  border-radius: 30px;
+  background: #38e7b6;
 }
 
 .browse .name {

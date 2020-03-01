@@ -33,10 +33,10 @@ app.set('port', process.argv[2]);
 app.use(express.static('static'));
 
 // disable cache
-app.use((req, res, next) => {
-  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+//   next();
+// });
 
 
 /*
@@ -62,15 +62,14 @@ app.get('/chat', function(req, res) {
     // try to get the user's chat logs
     const profile = profiles.find( p => p.name === name );
     if (profile) {
-      if (req.session.chat[name]) {
+      if (req.session.chat[name]) { // get previous chat messages
         res.render('chat', {
           title: 'hay love - chat',
           js: 'chat',
           profile,
           messages: req.session.chat[name]
         });
-
-      } else {
+      } else { // create new chat array
         req.session.chat[name] = [];
         res.render('chat', {
           title: 'hay love - chat',
