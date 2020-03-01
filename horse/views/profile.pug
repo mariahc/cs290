@@ -2,4 +2,29 @@ extends /layouts/layout.pug
 
 block content
   div.profile
-    h1 profile
+    a(href='/nextprofile?name=' + profile.name).control#reject neigh
+    section
+      div.top
+        div.image
+          img(src='images/'+profile.image, alt='profile image')
+        div.links
+          a(href='https://www.instagram.com').link
+            i.fab.fa-instagram
+          a(href='https://www.facebook.com').link
+            i.fab.fa-facebook-f
+      div.details
+        span.name #{profile.name}
+        span.age #{profile.age}
+      div.stats
+        div.job
+          i.fas.fa-briefcase
+          span #{profile.job}
+        div.weight
+          i.fas.fa-weight
+          span #{profile.weight} lbs
+        div.location
+          i.fas.fa-map-marker-alt
+          span #{profile.location}
+      div.bio
+        p #{profile.bio}
+    a(href='/chat?name=' + profile.name).control#accept whinny

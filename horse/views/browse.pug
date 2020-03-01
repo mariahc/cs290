@@ -5,7 +5,7 @@ block content
     ul.profiles
       each profile in profiles
         li
-          a(href="/profile/" + profile.user).profile
+          a(href="/profile?name=" + profile.name).card
             div.image
               img(src= "images/" + profile.image, alt="profile photo")
             div.bio

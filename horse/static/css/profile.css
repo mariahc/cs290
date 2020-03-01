@@ -1,0 +1,116 @@
+.profile {
+  align-items: center;
+  color: #555;
+  display: flex;
+  justify-content: center;
+}
+
+.profile .control {
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  height: 40px;
+  margin: 0 10px;
+  width: 80px;
+}
+
+.profile .top {
+  position: relative;
+}
+
+.profile .image {
+  height: 400px;
+  overflow: hidden;
+}
+
+.profile .links {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 80%;
+  top: 95%;
+}
+
+.profile .links a {
+  background: linear-gradient(0.5turn, #f69d3c, #ff146a);
+  border-radius: 25px;
+  font-size: 22px;
+  height: 50px;
+  margin-left: 8px;
+  width: 50px;
+}
+
+.profile .link i {
+  color: #fff;
+}
+
+.profile .links a:hover i {
+  color: #111;
+}
+
+.profile .details, .stats, .bio {
+  padding: 10px;
+}
+
+.profile .name {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.profile .age {
+  font-size: 22px;
+  font-weight: thin;
+}
+
+.profile .stats {
+  color: #777;
+}
+
+.profile .stats > div {
+  margin-bottom: 5px;
+}
+
+.profile .stats span {
+  margin-left: 5px;
+}
+
+.profile .stats i {
+  color: #777;
+  text-align: center;
+  width: 20px;
+}
+
+.profile .bio {
+  color: #777;
+}
+
+.profile #reject {
+  background: #ff146a;
+}
+
+.profile #reject:hover {
+  background: #fff;
+  color: #ff146a;
+}
+
+.profile #accept {
+  background: #38E7B6;
+}
+
+.profile #accept:hover {
+  background: #fff;
+  color: #38E7B6;
+}
+
+.profile span {
+  margin-right: 20px;
+}
+
+.profile section {
+  width: 600px;
+}
+
+.profile img {
+  height: 100%;
+}

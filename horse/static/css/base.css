@@ -11,4 +11,16 @@ button {
   cursor: pointer;
   outline: none;
   padding: 0;
+  transition: all ease .2s;
+}
+
+i {
+  color: #444;
+}
+
+a {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 }

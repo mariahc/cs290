@@ -49,32 +49,32 @@ app.get('/', function(req, res) {
 
 
 app.get('/chat', function(req, res) {
-  const { user } = req.query;
+  const { name } = req.query;
 
-  if (!user) {
+  if (!name) {
     // redirect to a random user
     const randIndex = Math.floor(Math.random() * profiles.length);
     const randProfile = profiles[randIndex];
-    res.redirect(`/chat?user=${randProfile.name}`);
+    res.redirect(`/chat?name=${randProfile.name}`);
   } else {
     // try to get the user's chat logs
-    const profile = profiles.find( p => p.name === user );
+    const profile = profiles.find( p => p.name === name );
     if (profile) {
-      if (req.session.chat[user]) {
+      if (req.session.chat[name]) {
         res.render('chat', {
           title: 'chat',
           js: 'chat',
-          user: user,
-          messages: req.session.chat[user]
+          user: name,
+          messages: req.session.chat[name]
         });
 
       } else {
-        req.session.chat[user] = [];
+        req.session.chat[name] = [];
         res.render('chat', {
           title: 'chat',
           js: 'chat',
-          user: user,
-          messages: req.session.chat[user]
+          user: name,
+          messages: req.session.chat[name]
         });
       }
     } else {
@@ -90,20 +90,35 @@ app.get('/browse', function(req, res) {
 
 
 app.get('/profile', function(req, res) {
-  const { user } = req.query;
+  const { name } = req.query;
 
-  if (!user) {
-    // go to a random user
+  if (!name) {
+    // redirect to a random user
     const randIndex = Math.floor(Math.random() * profiles.length);
     const randProfile = profiles[randIndex];
-    res.redirect(`/profile?user=${randProfile.name}`);
+    res.redirect(`/profile?name=${randProfile.name}`);
   } else {
-    const profile = profiles.find( p => p.name == user );
+    const profile = profiles.find( p => p.name == name );
     if (profile) {
       res.render('profile', { title: 'profile', profile });
     } else {
       res.sendStatus(404);
     }
+  }
+});
+
+
+app.get('/nextprofile', function(req, res) {
+  const { name } = req.query;
+
+  if (name) {
+    // redirect to next profile
+    const profile = profiles.find(p => p.name == name);
+    const currIndex = profiles.indexOf(profile);
+    const nextIndex = currIndex + 1 >= profiles.length ? 0 : currIndex + 1;
+    res.redirect(`/profile?name=${profiles[nextIndex].name}`);
+  } else {
+    res.sendStatus(404);
   }
 });
 
