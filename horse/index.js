@@ -9,10 +9,6 @@ const profiles = require('./profiles.json').profiles;
 
 const app = express();
 
-let questions = [];
-let attempts = 0;
-let score = 0;
-
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -29,7 +25,7 @@ app.use(function(req, res, next) {
   }
 
   next();
-})
+});
 
 app.set('view engine', 'pug');
 app.locals.basedir = path.join(__dirname, 'views');
@@ -43,11 +39,17 @@ app.use((req, res, next) => {
 });
 
 
+/*
+  Displays homepage
+ */
 app.get('/', function(req, res) {
-  res.render('home', { title: 'puggy!', message: 'taste like pug!', js: 'home'});
+  res.render('home', { title: 'hay love', js: 'home'});
 });
 
 
+/*
+  Displays provided user's chat, otherwise random chat
+ */
 app.get('/chat', function(req, res) {
   const { name } = req.query;
 
@@ -62,7 +64,7 @@ app.get('/chat', function(req, res) {
     if (profile) {
       if (req.session.chat[name]) {
         res.render('chat', {
-          title: 'chat',
+          title: 'hay love - chat',
           js: 'chat',
           profile,
           messages: req.session.chat[name]
@@ -71,7 +73,7 @@ app.get('/chat', function(req, res) {
       } else {
         req.session.chat[name] = [];
         res.render('chat', {
-          title: 'chat',
+          title: 'hay love - chat',
           js: 'chat',
           profile,
           messages: req.session.chat[name]
@@ -84,11 +86,17 @@ app.get('/chat', function(req, res) {
 });
 
 
+/*
+  Displays browse
+ */
 app.get('/browse', function(req, res) {
-  res.render('browse', { title: 'browse', profiles });
+  res.render('browse', { title: 'hay love - browse', profiles });
 });
 
 
+/*
+  Displays provided user's profile, otherwise random profile
+ */
 app.get('/profile', function(req, res) {
   const { name } = req.query;
 
@@ -100,7 +108,7 @@ app.get('/profile', function(req, res) {
   } else {
     const profile = profiles.find( p => p.name == name );
     if (profile) {
-      res.render('profile', { title: 'profile', profile });
+      res.render('profile', { title: `hay love - ${name}`, profile });
     } else {
       res.sendStatus(404);
     }
@@ -108,6 +116,9 @@ app.get('/profile', function(req, res) {
 });
 
 
+/*
+  Returns the profile after the current provided profile
+ */
 app.get('/nextprofile', function(req, res) {
   const { name } = req.query;
 
@@ -123,10 +134,22 @@ app.get('/nextprofile', function(req, res) {
 });
 
 
+/*
+  Chat message handler
+ */
 app.post('/send', function(req, res) {
   const { text, user, sender } = req.body;
   req.session.chat[user].push({ sender, text });
   res.json({ chat: req.session.chat[user] });
+});
+
+
+/*
+  File download
+ */
+app.get('/download', function(req, res) {
+  res.attachment('legal_release.pdf');
+  res.send();
 });
 
 

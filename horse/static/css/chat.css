@@ -1,6 +1,6 @@
 .chat {
-  justify-content: center;
   display: flex;
+  justify-content: center;
 }
 
 .chat .chat-container {
@@ -13,7 +13,7 @@
 
 .chat .chat-header {
   align-items: center;
-  background: #eee;
+  background: #ddd;
   border-bottom: 1px solid #ccc;
   border-radius: 5px 5px 0 0;
   display: flex;

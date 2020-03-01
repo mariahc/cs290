@@ -3,9 +3,9 @@
 ## TODO
 - [x] finish profile page structure
 - [x] style profile page
-- [ ] create logo
-- [ ] finish chat page structure
-- [ ] style chat page
-- [ ] style browse page
+- [x] create logo
+- [x] finish chat page structure
+- [x] style chat page
+- [x] style browse page
 - [ ] add download button
-- [ ] alignment issue in browse
+- [x] alignment issue in browse
