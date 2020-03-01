@@ -2,7 +2,7 @@
   "profiles": [
     {
       "name": "Harold",
-      "image": "horse00.jpg",
+      "image": "profile_0.jpg",
       "age": 7,
       "weight": 1150,
       "bio": "Artisan oat collector.",
@@ -12,7 +12,7 @@
     },
     {
       "name": "Fruitcake",
-      "image": "horse01.jpg",
+      "image": "profile_1.jpg",
       "age": 9,
       "weight": 1220,
       "bio": "Just looking for a role in the hay.",
@@ -21,7 +21,7 @@
     },
     {
       "name": "Whiskers",
-      "image": "horse02.jpg",
+      "image": "profile_2.jpg",
       "age": 11,
       "weight": 1950,
       "bio": "Tired of standing out in a field alone.",
@@ -30,7 +30,7 @@
     },
     {
       "name": "Greg",
-      "image": "horse03.jpg",
+      "image": "profile_3.jpg",
       "age": 13,
       "weight": 2025,
       "bio": "Just looking for a role in the hay.",
@@ -39,16 +39,16 @@
     },
     {
       "name": "Cucumber",
-      "image": "horse04.jpg",
+      "image": "profile_4.jpg",
       "age": 5,
       "weight": 980,
-      "bio": "No, I don't like cucumbers.",
+      "bio": "I don't like cucumbers.",
       "job": "Horse thief",
       "location": "7 miles away"
     },
     {
       "name": "Sparkles",
-      "image": "horse05.jpg",
+      "image": "profile_5.jpg",
       "age": 8,
       "weight": 1750,
       "bio": "Just looking for a role in the hay.",
@@ -57,7 +57,7 @@
     },
     {
       "name": "Ed",
-      "image": "horse06.jpg",
+      "image": "profile_6.jpg",
       "age": 12,
       "weight": 1445,
       "bio": "Looking for a running buddy.",

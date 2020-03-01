@@ -16,9 +16,9 @@
 
 .header .menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-right: 20px;
-  width: 500px;
+  width: 100%;
 }
 
 .header img {
@@ -34,7 +34,7 @@
   font-size: 18px;
   justify-content: center;
   height: 40px;
-  margin: 0 auto;
+  margin-left: 15px;
   text-decoration: none;
   transition: all ease  .2s;
   width: 100px;

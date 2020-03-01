@@ -1,36 +1,37 @@
 .home h1 {
-  color: #fff;
   font-size: 190px;
-  text-align: center;
-  width: 100%;
   z-index: -1;
+}
+
+.home p {
+  font-size: 20px;
+}
+
+.home h1, .home p {
+  color: #fff;
+  text-align: center;
   text-shadow:
-    1px  1px 0 #000,
-    1px -1px 0 #000,
-   -1px  1px 0 #000,
-   -1px -1px 0 #000;
+    1px  1px 0 #333,
+    1px -1px 0 #333,
+   -1px  1px 0 #333,
+   -1px -1px 0 #333;
+   width: 100%;
 }
 
 .home .roamContainer {
   display: flex;
   justify-content: center;
-  margin: 100px auto;
+  margin: 50px auto;
   width: 100%;
 }
 
 .home #roam {
-  align-items: center;
   background: linear-gradient(0.25turn, #3f87a6, #f69d3c);
-  border-radius: 25px;
+  border-radius: 30px;
   color: #eee;
-  display: flex;
   font-size: 20px;
   font-weight: bold;
-  justify-content: center;
   height: 60px;
-  margin: 0 auto;
-  text-decoration: none;
-  transition: all ease .2s;
   width: 240px;
   z-index: 100;
 }
