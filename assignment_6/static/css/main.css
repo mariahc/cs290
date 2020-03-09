@@ -2,12 +2,6 @@ fieldset {
   border: none;
 }
 
-label {
-  margin-right: 5px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
 button {
   background-color: #ddd;
   border: none;
@@ -32,6 +26,32 @@ tr:nth-child(2n) {
   background-color: #eee;
 }
 
+td:nth-child(4) {
+  width: 5%;
+}
+
+td:nth-child(5) {
+  width: 10%;
+}
+
+td:nth-child(6) {
+  width: 20%;
+}
+
+.label {
+  margin-right: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100px;
+}
+
+.field {
+  align-items: center;
+  display: flex;
+  justify-content: left;
+  margin-bottom: 10px;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
@@ -41,7 +61,8 @@ tr:nth-child(2n) {
   background-color: #eee;
   border: none;
   font-size: 16px;
-  height: 40px;
+  height: 30px;
+  padding: 5px;
   width: 200px;
 }
 

@@ -3,23 +3,23 @@ extends /layouts/layout.pug
 block content
   div#home
     form#form
-      fieldset
-        label(for="name") Name
-        input(type="text", name="name", placeholder="name of exercise").input#name
-      fieldset
-        label(for="reps") Reps
+      div.field
+        label(for="name").label Name
+        input(type="text", name="name", placeholder="name of exercise" required).input#name
+      div.field
+        label(for="reps").label Reps
         input(type="number", name="reps", placeholder="number of reps").input#reps
-      fieldset
-        label(for="weight") Weight
+      div.field
+        label(for="weight").label Weight
         input(type="number", name="weight", placeholder="weight of weight").input#weight
-      fieldset
-        label() Units
+      div.field
+        label.label Units
         label(for="unitLB") lbs
         input(type="radio", name="unit", value="lbs" checked).radio#unitLB
         label(for="unitKG") kg
         input(type="radio", name="unit", value="kg").radio#unitKG
-      fieldset
-        label(for="date") Date
+      div.field
+        label(for="date").label Date
         input(type="date", name="date").input#date
 
       input(type="hidden", name="id")

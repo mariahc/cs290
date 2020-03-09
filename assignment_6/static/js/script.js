@@ -202,7 +202,7 @@ function clearForm() {
 
 
 /*
-  Create options buttons
+  Create form options buttons
  */
 function createButtons(id) {
   const buttons = create('div');
@@ -273,7 +273,7 @@ function addRow(data) {
   tr.appendChild(unitElem);
 
   const dateElem = create('td');
-  dateElem.textContent = data.date;
+  dateElem.textContent = data.date.slice(0,10);
   tr.appendChild(dateElem);
 
   const optElem = create('td');
