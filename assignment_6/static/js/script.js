@@ -163,13 +163,13 @@ function onEdit(e) {
   exForm.weight.value = row.weight;
   exForm.unit.value = row.unit ? 'lbs' : 'kg';
 
-  // set date
+  // set date by cutting a formatted string
   exForm.date.value = new Date(row.date).toISOString().slice(0,10);
 }
 
 
 /*
-  Restore edit form to submission form
+  Revert edit form to submission form
  */
 function finishEditing(e) {
   if (e) e.preventDefault();
@@ -285,7 +285,7 @@ function addRow(data) {
 
 
 /*
-  Get all rows and add them to table
+  Get all rows from server and add them to table
  */
 function createTable() {
   getRequest('/?load=1').then(res => {
@@ -322,6 +322,7 @@ function create(elem) {
 
 
 function main() {
+  // set events on form buttons
   const exForm = document.getElementById('form');
   exForm.onsubmit = onSubmit;
 
