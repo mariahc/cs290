@@ -33,14 +33,10 @@ app.get('/', function(req, res) {
 app.post('/', function(req, res) {
   const { name, weight, reps, unit, date } = req.body;
 
-  if (name) {
-    console.log(name);
-  }
-
   // create new row
   mysql.pool.query(
     "INSERT INTO workouts (`name`, `weight`, `reps`, `lbs`, `date`) VALUES (?, ?, ?, ?, ?)",
-    [name, weight, reps, unit === 'lbs', date],
+    [name, weight, reps, unit, date],
     function(err, result) {
       if (err) {
         res.json({ err });
@@ -59,11 +55,56 @@ app.post('/', function(req, res) {
             return;
           }
 
-          console.log('got row ' + rows[0]);
-
           // return new row
           res.json({ row: rows[0] });
         });
+  });
+});
+
+
+app.delete('/', function(req, res) {
+  const { id } = req.body
+  if (!id) {
+    res.json({ err: 'must include id of row to delete' });
+    return;
+  }
+
+  mysql.pool.query("DELETE FROM workouts WHERE id=?", [id], function(err, result){
+    if (err) {
+      res.json({ err });
+      return;
+    }
+
+    res.json({ success: true });
+  });
+});
+
+
+app.put('/', function(req, res) {
+  const { id, name, weight, reps, unit, date } = req.body;
+
+  // update given id
+  mysql.pool.query("SELECT * FROM workouts WHERE id=?", [id], function(err, result){
+    if (err) {
+      res.json({ err });
+      return;
+    }
+
+    if (result.length == 1) {
+      const def = result[0];
+      mysql.pool.query("UPDATE workouts SET name=?, weight=?, reps=? lbs=? WHERE id=? ",
+        [name || def.name, weight || def.weight, reps || def.reps, unit || def.lbs, date || def.date, id],
+        function(err, result){
+        if (err){
+          res.json({ err });
+          return;
+        }
+
+        res.json({ success: true });
+      });
+    } else {
+      res.json({ err: 'could not find row to update' });
+    }
   });
 });
 

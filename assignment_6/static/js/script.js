@@ -34,19 +34,45 @@ function getRequest(url) {
 }
 
 
+/*
+  DELETE HTTP request handler
+ */
+function deleteRequest(url, payload) {
+  return new Promise((resolve, reject) => {
+    let req = new XMLHttpRequest();
+    req.open('delete', url, true);
+    req.setRequestHeader('Content-Type', 'application/json');
+    req.addEventListener('load', () => {
+      let res = JSON.parse(req.responseText);
+      resolve(res);
+    });
+    req.send(JSON.stringify(payload));
+  });
+}
+
+
 function onEdit(e) {
   e.preventDefault();
 
-  const optForm = document.getElementById('optForm');
-  console.log('id of row editing: ' + optForm.id.value);
+  console.log('id of row editing: ' + e.target.id.value);
+
+
 }
 
 
 function onDelete(e) {
   e.preventDefault();
 
-  const optForm = document.getElementById('optForm');
-  console.log('id of row deleting: ' + optForm.id.value);
+  console.log('id of row deleting: ' + e.target.id.value);
+
+  deleteRequest('/', { id: e.target.id.value }).then(res => {
+    if (res.err) {
+      console.error(JSON.stringify(res.err));
+    } else {
+      console.log('delete success');
+      refreshTable();
+    }
+  });
 }
 
 
@@ -70,7 +96,7 @@ function handleSubmit(e) {
     name: exForm.name.value,
     reps: exForm.reps.value,
     weight: exForm.weight.value,
-    unit: exForm.unit.value,
+    unit: exForm.unit.value === 'lbs',
     date: exForm.date.value
   }).then(res => {
     clearForm();
@@ -84,6 +110,7 @@ function handleSubmit(e) {
     addRow(res.row);
   });
 }
+
 
 /*
   Clear form inputs
@@ -102,26 +129,44 @@ function clearForm() {
   Create options buttons
  */
 function createButtons(id) {
-  const buttons = create('form');
-  buttons.class = 'optForm';
+  const buttons = create('div');
+  buttons.class = 'buttons';
 
-  const idInput = create('input');
+  // create edit form & button
+  const editForm = create('form');
+  editForm.onsubmit = onEdit;
+
+  let idInput = create('input');
   idInput.type = 'hidden';
   idInput.name = 'id';
   idInput.value = id;
-  buttons.appendChild(idInput);
+  editForm.appendChild(idInput);
 
   const editBtn = create('button');
-  editBtn.onclick = onEdit;
+  editBtn.type = 'submit';
   editBtn.textContent = 'Edit';
   editBtn.class = 'edit';
-  buttons.appendChild(editBtn);
+  editForm.appendChild(editBtn);
+
+  buttons.appendChild(editForm);
+
+  // create delete form & button
+  const delForm = create('form');
+  delForm.onsubmit = onDelete;
+
+  idInput = create('input');
+  idInput.type = 'hidden';
+  idInput.name = 'id';
+  idInput.value = id;
+  delForm.appendChild(idInput);
 
   const deleteBtn = create('button');
-  deleteBtn.onclick = onDelete;
+  deleteBtn.type = 'submit';
   deleteBtn.textContent = 'Delete';
   deleteBtn.class = 'delete';
-  buttons.appendChild(deleteBtn);
+  delForm.appendChild(deleteBtn);
+
+  buttons.appendChild(delForm);
 
   return buttons;
 }
@@ -148,7 +193,7 @@ function addRow(data) {
   tr.appendChild(weightElem);
 
   const unitElem = create('td');
-  unitElem.textContent = data.unit ? 'lbs' : 'kg';
+  unitElem.textContent = data.lbs ? 'lbs' : 'kg';
   tr.appendChild(unitElem);
 
   const dateElem = create('td');
@@ -174,6 +219,20 @@ function createTable() {
       res.rows.forEach(row => addRow(row));
     }
   });
+}
+
+
+/*
+  Clear and rebuild table
+ */
+function refreshTable() {
+  // clear table
+  const table = document.getElementById('tablebody');
+  while (table.firstChild) {
+    table.removeChild(table.firstChild);
+  }
+
+  createTable();
 }
 
 
