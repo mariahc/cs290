@@ -1,3 +1,4 @@
+// hold last rows update for editing
 let state = [];
 
 
@@ -68,6 +69,9 @@ function putRequest(url, payload) {
 }
 
 
+/*
+  Delete row and get new table data
+ */
 function onDelete(e) {
   e.preventDefault();
 
@@ -75,9 +79,8 @@ function onDelete(e) {
 
   deleteRequest('/', { id: e.target.id.value }).then(res => {
     if (res.err) {
-      console.error(JSON.stringify(res.err));
+      console.error(res.err);
     } else {
-      console.log('delete success');
       refreshTable();
     }
   });
@@ -87,18 +90,10 @@ function onDelete(e) {
 /*
   Handle new exercise data submission
  */
-function handleSubmit(e) {
+function onSubmit(e) {
   e.preventDefault();
 
   const exForm = document.getElementById('form');
-  console.log('submitting exercise ' + exForm.name.value);
-  console.log({
-    name: exForm.name.value,
-    reps: exForm.reps.value,
-    weight: exForm.weight.value,
-    unit: exForm.unit.value,
-    date: exForm.date.value
-  });
 
   postRequest('/', {
     name: exForm.name.value,
@@ -111,19 +106,17 @@ function handleSubmit(e) {
 
     if (res.err) {
       console.error(res.err);
+    } else {
+      addRow(res.row);
     }
-
-    console.log('got new row:\n', res.row);
-
-    addRow(res.row);
   });
 }
 
 
 /*
-  Handle updating row data
+  Submit updates to server and reset form
  */
-function handleUpdate(e) {
+function onUpdate(e) {
   e.preventDefault();
 
   const exForm = document.getElementById('form');
@@ -151,7 +144,7 @@ function onEdit(e) {
   e.preventDefault();
 
   const exForm = document.getElementById('form');
-  exForm.onsubmit = handleUpdate;
+  exForm.onsubmit = onUpdate;
 
   const submitBtn = document.getElementById('submit');
   submitBtn.textContent = 'Update';
@@ -182,7 +175,7 @@ function finishEditing(e) {
   if (e) e.preventDefault();
 
   const exForm = document.getElementById('form');
-  exForm.onsubmit = handleSubmit;
+  exForm.onsubmit = onSubmit;
 
   const submitBtn = document.getElementById('submit');
   submitBtn.textContent = 'Add';
@@ -292,7 +285,7 @@ function addRow(data) {
 
 
 /*
-  Create table and add to DOM
+  Get all rows and add them to table
  */
 function createTable() {
   getRequest('/?load=1').then(res => {
@@ -330,7 +323,7 @@ function create(elem) {
 
 function main() {
   const exForm = document.getElementById('form');
-  exForm.onsubmit = handleSubmit;
+  exForm.onsubmit = onSubmit;
 
   const cancelBtn = document.getElementById('cancel');
   cancelBtn.onclick = clearForm;

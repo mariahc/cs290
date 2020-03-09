@@ -28,6 +28,10 @@ table {
   width: 100%;
 }
 
+tr:nth-child(2n) {
+  background-color: #eee;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
