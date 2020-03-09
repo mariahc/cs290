@@ -3,36 +3,39 @@ extends /layouts/layout.pug
 block content
   div#home
     form#form
-      label(for="name") Name
-      input(type="text", name="name", placeholder="name of exercise")#name
+      fieldset
+        label(for="name") Name
+        input(type="text", name="name", placeholder="name of exercise").input#name
+      fieldset
+        label(for="reps") Reps
+        input(type="number", name="reps", placeholder="number of reps").input#reps
+      fieldset
+        label(for="weight") Weight
+        input(type="number", name="weight", placeholder="weight of weight").input#weight
+      fieldset
+        label() Units
+        label(for="unitLB") lbs
+        input(type="radio", name="unit", value="lbs" checked).radio#unitLB
+        label(for="unitKG") kg
+        input(type="radio", name="unit", value="kg").radio#unitKG
+      fieldset
+        label(for="date") Date
+        input(type="date", name="date").input#date
 
-      label(for="reps") Reps
-      input(type="number", name="reps", placeholder="number of reps")#reps
-
-      label(for="weight") Weight
-      input(type="number", name="weight", placeholder="weight of weight")#weight
-
-      label(for="unitLB") lbs
-      input(type="radio", name="unit", value="lbs" checked)#unitLB
-
-      label(for="unitKG") kg
-      input(type="radio", name="unit", value="kg")#unitKG
-
-      label(for="date") Date
-      input(type="date", name="date")#date
+      input(type="hidden", name="id")
 
       button(type='submit')#submit Add
+      button(type='button')#cancel Clear
 
-    div#table
-      table
-        thead
-          tr
-            th Name
-            th Reps
-            th Weight
-            th Unit
-            th Date
-            th options
-        tbody#tablebody
+    table
+      thead
+        tr
+          th Name
+          th Reps
+          th Weight
+          th Unit
+          th Date
+          th options
+      tbody#tablebody
 
     div#results #{results}

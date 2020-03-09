@@ -92,7 +92,7 @@ app.put('/', function(req, res) {
 
     if (result.length == 1) {
       const def = result[0];
-      mysql.pool.query("UPDATE workouts SET name=?, weight=?, reps=? lbs=? WHERE id=? ",
+      mysql.pool.query("UPDATE workouts SET name=?, weight=?, reps=?, lbs=?, date=? WHERE id=? ",
         [name || def.name, weight || def.weight, reps || def.reps, unit || def.lbs, date || def.date, id],
         function(err, result){
         if (err){

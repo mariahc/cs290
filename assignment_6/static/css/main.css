@@ -1,7 +1,69 @@
-#form  {
-
+fieldset {
+  border: none;
 }
 
-#table {
+label {
+  margin-right: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
 
+button {
+  background-color: #ddd;
+  border: none;
+  font-size: 16px;
+  height: 30px;
+  margin-right: 10px;
+  outline: none;
+  transition: all ease .2s;
+  width: 80px;
+}
+
+button:hover {
+  opacity: .8;
+}
+
+table {
+  margin: 50px 0;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  background-color: #eee;
+  border: none;
+  font-size: 16px;
+  height: 40px;
+  width: 200px;
+}
+
+.radio {
+  margin-right: 15px;
+}
+
+.edit {
+  background-color: #f7e651;
+}
+
+.delete {
+  background-color: #f75151;
+}
+
+#form {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+#submit {
+  background-color: #1f649d;
+  color: #fff;
+}
+
+#cancel {
+  background-color: #222;
+  color: #fff;
 }
