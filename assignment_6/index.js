@@ -76,10 +76,6 @@ app.post('/', function(req, res) {
  */
 app.delete('/', function(req, res) {
   const { id } = req.body
-  if (!id) {
-    res.json({ err: 'must include id of row to delete' });
-    return;
-  }
 
   mysql.pool.query("DELETE FROM workouts WHERE id=?", [id], function(err, result){
     if (err) {
@@ -87,7 +83,7 @@ app.delete('/', function(req, res) {
       return;
     }
 
-    // signal finished
+    // signal query finished
     res.json({ success: true });
   });
 });
@@ -116,7 +112,7 @@ app.put('/', function(req, res) {
           return;
         }
 
-        // signal finished
+        // signal query finished
         res.json({ success: true });
       });
     } else {
